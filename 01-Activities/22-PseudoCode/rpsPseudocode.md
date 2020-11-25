@@ -11,3 +11,5 @@
   - user r | computer s = user wins
   - user p | computer s = computer wins
   - user s | computer s = tie
+* alert results
+* alert record of wins/losses

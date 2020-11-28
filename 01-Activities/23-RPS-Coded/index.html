@@ -7,11 +7,38 @@
   </head>
   <body>
     <script type="text/javascript">
-      const userChoice = prompt("select r, p, or s");
-      const choiceArr = ["r", "p", "s"];
+      let wins = 0;
+      let losses = 0;
+      let ties = 0;
 
-      const compChoice = Math.floor(Math.random() * choiceArr.length);
-      console.log(choiceArr[compChoice]);
+      const choiceArr = ["r", "p", "s"];
+      
+      const userChoice = prompt("select r, p, or s");
+      
+      const compChoice = choiceArr[Math.floor(Math.random() * choiceArr.length)];
+      // console.log(compChoice);
+      if (userChoice === 'r' && compChoice === 'r') {
+        ties++;
+      } else if (userChoice === 'p' && compChoice === 'r') {
+        wins++;
+      } else if (userChoice === 's' && compChoice === 'r') {
+        losses++;
+      } else if (userChoice === 'r' && compChoice === 'p') {
+        losses++;
+      } else if (userChoice === 'p' && compChoice === 'p') {
+        ties++;
+      } else if (userChoice === 's' && compChoice === 'p') {
+        wins++;
+      } else if (userChoice === 'r' && compChoice === 's') {
+        wins++;
+      } else if (userChoice === 'p' && compChoice === 's') {
+        losses++;
+      } else if (userChoice === 's' && compChoice === 's') {
+        ties++;
+      }
+
+      console.log(wins, losses, ties);
+
 
     </script>
   </body>

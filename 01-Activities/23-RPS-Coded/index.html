@@ -3,43 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Rock, Paper, Scissors</title>
   </head>
   <body>
     <script type="text/javascript">
+      // const rpsGame = function () {
       let wins = 0;
       let losses = 0;
       let ties = 0;
 
       const choiceArr = ["r", "p", "s"];
-      
-      const userChoice = prompt("select r, p, or s");
-      
-      const compChoice = choiceArr[Math.floor(Math.random() * choiceArr.length)];
-      // console.log(compChoice);
-      if (userChoice === 'r' && compChoice === 'r') {
-        ties++;
-      } else if (userChoice === 'p' && compChoice === 'r') {
-        wins++;
-      } else if (userChoice === 's' && compChoice === 'r') {
-        losses++;
-      } else if (userChoice === 'r' && compChoice === 'p') {
-        losses++;
-      } else if (userChoice === 'p' && compChoice === 'p') {
-        ties++;
-      } else if (userChoice === 's' && compChoice === 'p') {
-        wins++;
-      } else if (userChoice === 'r' && compChoice === 's') {
-        wins++;
-      } else if (userChoice === 'p' && compChoice === 's') {
-        losses++;
-      } else if (userChoice === 's' && compChoice === 's') {
-        ties++;
+
+      for (let i = 0; i < 10; i++) {
+        const userChoice = prompt("select r, p, or s");
+
+        if (userChoice === "r" || userChoice === "p" || userChoice === "s") {
+          const compChoice =
+            choiceArr[Math.floor(Math.random() * choiceArr.length)];
+          // console.log(compChoice);
+          if (userChoice === "r" && compChoice === "r") {
+            ties++;
+            alert(
+              `The computer also chose '${compChoice}'! It's a tie! You've tied ${ties} times.`
+            );
+          } else if (userChoice === "p" && compChoice === "r") {
+            wins++;
+            alert(
+              `The computer chose '${compChoice}'! You win! '${userChoice}' beats '${compChoice}'! You've won ${wins} times.`
+            );
+          } else if (userChoice === "s" && compChoice === "r") {
+            losses++;
+            alert(
+              `The computer chose '${compChoice}'. You lose! '${compChoice}' beats '${userChoice}'. You've lost ${losses} times.`
+            );
+          } else if (userChoice === "r" && compChoice === "p") {
+            losses++;
+            alert(
+              `The computer chose '${compChoice}'. You lose! '${compChoice}' beats '${userChoice}'. You've lost ${losses} times.`
+            );
+          } else if (userChoice === "p" && compChoice === "p") {
+            ties++;
+            alert(
+              `The computer also chose '${compChoice}'! It's a tie! You've tied ${ties} times.`
+            );
+          } else if (userChoice === "s" && compChoice === "p") {
+            wins++;
+            alert(
+              `The computer chose '${compChoice}'! You win! '${userChoice}' beats '${compChoice}'! You've won ${wins} times.`
+            );
+          } else if (userChoice === "r" && compChoice === "s") {
+            wins++;
+            alert(
+              `The computer chose '${compChoice}'! You win! '${userChoice}' beats '${compChoice}'! You've won ${wins} times.`
+            );
+          } else if (userChoice === "p" && compChoice === "s") {
+            losses++;
+            alert(
+              `The computer chose '${compChoice}'. You lose! '${compChoice}' beats '${userChoice}'. You've lost ${losses} times.`
+            );
+          } else if (userChoice === "s" && compChoice === "s") {
+            ties++;
+            alert(
+              `The computer also chose '${compChoice}'! It's a tie! You've tied ${ties} times.`
+            );
+          }
+        }
       }
 
-      console.log(wins, losses, ties);
-
-
+      alert(
+        `You've won ${wins} times. \nYou've lost ${losses} times. \nYou've tied ${ties} times. \n\nRefresh the page to play again.`
+      );
     </script>
   </body>
 </html>

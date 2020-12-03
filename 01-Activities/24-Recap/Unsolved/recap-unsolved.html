@@ -23,16 +23,20 @@
 
 
       // How do we print out every single student in Row 1?
-
+      studentsRow1.forEach(student => console.log(student));
 
       // How do we print out every student in Row 2 whose first name begins with J?
-
+      studentsRow2.forEach(student => {
+        if (student.charAt(0) === 'J') {
+          console.log(student);
+        }
+      });
 
       // Using the entireClass array, how do we access the second student in row 3?
-
+      console.log(entireClass[2][1]);
 
       // Using the entireClass array, how do we access the third student in row 2?
-
+      console.log(entireClass[1][2]);
 
     </script>
     

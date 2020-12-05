@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question Game!</title>
+  </head>
+  <body>
+    <script>
+      const questions = [
+        {
+          q: "Milk chocolate is superior to dark chocolate.",
+          a: true,
+        },
+        {
+          q: "HOAs should be abolished.",
+          a: true,
+        },
+        {
+          q: "Marvel is superior to DC.",
+          a: true,
+        },
+        {
+          q: "Video killed the radio star.",
+          a: true,
+        },
+        {
+          q: "JavaScript is the easiest thing in the world to learn",
+          a: false,
+        },
+        {
+          q: "YouTube killed the video star.",
+          a: true,
+        },
+        {
+          q: "Rian Johnson is a good director",
+          a: false,
+        },
+        {
+          q: "My brain is mush right now",
+          a: true,
+        },
+      ];
+
+      let correctAnswers = 0
+
+      // 'for loop' version:
+
+      // for (let i = 0; i < questions.length; i++) {
+      //   let question = confirm(questions[i].q);
+      //   if (question === questions[i].a) {
+      //     correctAnswers++;
+      //     alert('Correct!');
+      //   } else {
+      //     alert('Wrong.');
+      //   }
+      // }
+
+      // 'forEach' version:
+
+      questions.forEach(question => {
+        let answer = confirm(question.q);
+        if (answer === question.a) {
+          correctAnswers++;
+          alert('Correct!');
+        } else {
+          alert('Wrong.');
+        }
+      });
+
+      alert(`You got ${correctAnswers} out of 8 questions right.`);
+
+    </script>
+  </body>
+</html>

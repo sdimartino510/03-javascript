@@ -20,22 +20,30 @@
         isWorking: true,
 
         driveToWork: function() {
-          alert("Old Mileage: " + this.mileage);
+          if (car.isWorking) {
+            alert("Old Mileage: " + this.mileage);
 
-          this.mileage = this.mileage + 8;
+            this.mileage = this.mileage + 8;
 
-          alert("New mileage: " + this.mileage);
+            alert("New mileage: " + this.mileage);
+          } else {
+            alert('Sorry, car needs a tuneup!');
+          }
         },
 
         driveAroundWorld: function() {
-          alert("Old Mileage: " + this.mileage);
+          if (car.isWorking) {
+            alert("Old Mileage: " + this.mileage);
 
-          this.mileage = this.mileage + 24000;
+            this.mileage = this.mileage + 24000;
 
-          alert("New Mileage: " + this.mileage);
-          alert("Car needs a tuneup!");
+            alert("New Mileage: " + this.mileage);
+            alert("Car needs a tuneup!");
 
-          this.isWorking = false;
+            this.isWorking = false;
+          } else {
+            alert('Sorry, car needs a tuneup!');
+          }
         },
 
         getTuneUp: function() {
@@ -70,6 +78,31 @@
         letter = prompt("Type 'h' to honk, 'd' to drive to work, 'w' to drive around the world, or 't' to get a tuneup.");
         
         // TO DO: Call the different car methods
+        switch (letter) {
+          case 'h':
+            car.honk();
+            reWriteStats();
+            break;
+          case 'd':
+            car.driveToWork();
+            reWriteStats();
+            break;
+          case 'w':
+            car.driveAroundWorld();
+            reWriteStats();
+            break;
+          case 't':
+            car.getTuneUp();
+            reWriteStats();
+            break;
+          default:
+            alert('Please select h, d, w, or t!');
+        }
+
+        // if (!car.isWorking) {
+
+        // }
+
       }
 
     </script>
